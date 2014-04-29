@@ -69,7 +69,7 @@ public class VideoPlayer extends CordovaPlugin {
             // change uri to be to the new file in internal storage
             uri = Uri.parse("file://" + this.cordova.getActivity().getFilesDir() + "/" + filename);
             
-            Intent videoPlaybackActivity = new Intent(this.cordova.getActivity(), VideoPlayer.class);
+            Intent videoPlaybackActivity = new Intent(this.cordova.getActivity(), VideoPlayerActivity.class);
             videoPlaybackActivity.putExtra("uri", uri);
             this.cordova.getActivity().startActivity(videoPlaybackActivity);
         }

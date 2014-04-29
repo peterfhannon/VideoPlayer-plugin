@@ -31,7 +31,8 @@
 				android:label="VideoPlayer"
 				android:launchMode="singleTask"
                 android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-                android:screenOrientation="landscape"  >
+                android:screenOrientation="landscape"
+                android:noHistory="true">
 			</activity>
         </config-file>
         <source-file src="src/android/VideoPlayer.java" target-dir="src/com/unit11apps/videoplayer" />
