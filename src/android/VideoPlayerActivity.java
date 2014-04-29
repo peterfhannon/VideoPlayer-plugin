@@ -1,6 +1,4 @@
-package com.dawsonloudon.videoplayer;
-
-import com.unit11apps.Phonics3.R;
+package com.unit11apps.videoplayer;
 
 import android.app.Activity;
 import android.content.Intent;
