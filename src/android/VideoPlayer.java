@@ -4,7 +4,7 @@
  *
  */
 
-package com.dawsonloudon.videoplayer;
+package com.unit11apps.videoplayer;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -53,6 +53,7 @@ public class VideoPlayer extends CordovaPlugin {
         // Create URI
         Uri uri = Uri.parse(url);
         
+        // Check to see if someone is trying to play a YouTube page.
         if(url.contains(ASSETS)) {
             // get file path in assets folder
             String filepath = url.replace(ASSETS, "");
@@ -69,8 +70,8 @@ public class VideoPlayer extends CordovaPlugin {
             uri = Uri.parse("file://" + this.cordova.getActivity().getFilesDir() + "/" + filename);
             
             Intent videoPlaybackActivity = new Intent(this.cordova.getActivity(), VideoPlayer.class);
-            videoPlaybackActivity.putExtra("fileRes", uri);
-            this.cordova.getActivity()startActivity(videoPlaybackActivity);
+            videoPlaybackActivity.putExtra("uri", uri);
+            this.cordova.getActivity().startActivity(videoPlaybackActivity);
         }
     }
     
