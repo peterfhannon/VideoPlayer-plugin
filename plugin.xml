@@ -25,7 +25,7 @@
             </feature>
         </config-file>
 		
-		<config-file target="AndroidManifest.xml" parent="/*">
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity
 				android:name="com.unit11apps.videoplayer.VideoPlayerActivity"
 				android:label="VideoPlayer"
