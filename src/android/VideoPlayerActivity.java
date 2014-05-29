@@ -1,5 +1,7 @@
 package com.unit11apps.videoplayer;
 
+import com.unit11apps.Phonics3.R;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;

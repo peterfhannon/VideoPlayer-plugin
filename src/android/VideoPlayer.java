@@ -68,11 +68,18 @@ public class VideoPlayer extends CordovaPlugin {
             
             // change uri to be to the new file in internal storage
             uri = Uri.parse("file://" + this.cordova.getActivity().getFilesDir() + "/" + filename);
-            
-            Intent videoPlaybackActivity = new Intent(this.cordova.getActivity(), VideoPlayerActivity.class);
-            videoPlaybackActivity.putExtra("uri", uri);
-            this.cordova.getActivity().startActivity(videoPlaybackActivity);
         }
+        else
+        {
+        	//remove extension
+        	url = url.substring(0, url.lastIndexOf('.'));
+        	
+        	uri = Uri.parse("android.resource://" + this.cordova.getActivity().getPackageName() + "/raw/" + url);
+        }
+        
+        Intent videoPlaybackActivity = new Intent(this.cordova.getActivity(), VideoPlayerActivity.class);
+        videoPlaybackActivity.putExtra("uri", uri);
+        this.cordova.getActivity().startActivity(videoPlaybackActivity);
     }
     
     private void copy(String fileFrom, String fileTo) throws IOException {
